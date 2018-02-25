@@ -226,6 +226,14 @@ header.masthead .post-heading .meta a {
     background-size: cover;
 }
 
+.featured-collection-title {
+    font-family: 'Abel', 'Open Sans', serif;
+    font-weight: 300;
+    color: #bda34c;
+    text-transform: uppercase;
+
+}
+
 footer {
     padding: 40px 0 5px;
     border-top: 1px solid #bda34c;
