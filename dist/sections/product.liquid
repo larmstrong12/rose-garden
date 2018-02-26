@@ -8,11 +8,11 @@
                 <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
                 <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
                 <meta itemprop="brand" content="{{ product.vendor }}">
-                <meta itemprop="image" content="{{ featured_image | img_url: '900x900' }}">
+                <meta itemprop="image" content="{{ featured_image | img_url: '1200x1200' }}">
                 <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
                 {% if featured_image != blank %}
-                    <img src="{{ featured_image | img_url: '800x800' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
+                    <img src="{{ featured_image | img_url: '1200x1200' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
                 {% endif %}
 
                 {% if product.images.size > 1 %}
@@ -28,19 +28,32 @@
                 {% endif %}
             </div>
 
-            <div class="col-lg-7 text-center">
+            <div class="col-lg-6 text-left product-info">
                 <h1>{{ product.title }}</h1>
                 <p>{{ product.vendor }}</p>
                 <div class="rte">
                     {{ product.description }}
                 </div>
+            </div>
 
+            <div class="col-lg-6 text-right product-info">
                 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 <meta itemprop="priceCurrency" content="{{ shop.currency }}">
                 <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
                 <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
 
                 <form action="/cart/add" method="post" enctype="multipart/form-data">
+                    <button type="submit" name="add" data-add-to-cart
+                    {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn btn-primary">
+                        <span data-add-to-cart-text>
+                        {% if current_variant.available %}
+                            {{ 'products.product.add_to_cart' | t }}
+                        {% else %}
+                            {{ 'products.product.sold_out' | t }}
+                        {% endif %}
+                        </span>
+                    </button>
+
                   {% unless product.has_only_default_variant %}
                     {% for option in product.options_with_values %}
                       <div class="selector-wrapper js">
@@ -93,30 +106,8 @@
                     {% endif %}
                   </div>
 
-                  <button
-                    type="submit"
-                    name="add"
-                    data-add-to-cart
-                    {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn btn-primary">
-                      <span data-add-to-cart-text>
-                        {% if current_variant.available %}
-                          {{ 'products.product.add_to_cart' | t }}
-                        {% else %}
-                          {{ 'products.product.sold_out' | t }}
-                        {% endif %}
-                      </span>
-                  </button>
+
                 </form>
-
-                {% if section.settings.show_share_buttons %}
-                    {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
-                {% endif %}
-
-                {% unless product == empty %}
-                    <script type="application/json" data-product-json>
-                        {{ product | json }}
-                    </script>
-                {% endunless %}
             </div>
         </div>
     </div>

@@ -276,9 +276,19 @@ header.masthead .post-heading .meta a {
 }
 
 .btn-primary {
-    background-color: white;
-    border: 1px solid #131313;
     color: #131313;
+    background-color: #ffffff;
+    border-color: #131313;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #131313;
+    border-color: #ffffff;
+}
+
+.product-info {
+    padding-top: 20px;
 }
 
 footer {
