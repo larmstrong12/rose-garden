@@ -231,7 +231,54 @@ header.masthead .post-heading .meta a {
     font-weight: 300;
     color: #bda34c;
     text-transform: uppercase;
+    padding-top: 40px;
+    padding-left: 20px;
+}
 
+.featured-collection-subtitle {
+    font-family: 'Abel', 'Open Sans', serif;
+    font-weight: 200;
+    color: #131313;
+    text-transform: uppercase;
+    padding-left: 20px;
+}
+
+.product-page {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.product:hover {
+    text-decoration: none;
+}
+
+.product-title {
+    color: #131313;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Abel', 'Open Sans', serif;
+    padding-top: 20px;
+}
+
+.product-title:hover {
+    color: #131313;
+}
+
+.product-price {
+    text-align: center;
+    color: #131313;
+    font-family: 'Abel', 'Open Sans', serif;
+    font-size: 15px;
+}
+
+.product-price:hover {
+    color: #bda34c;
+}
+
+.btn-primary {
+    background-color: white;
+    border: 1px solid #131313;
+    color: #131313;
 }
 
 footer {
