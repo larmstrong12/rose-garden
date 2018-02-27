@@ -252,6 +252,33 @@ header.masthead .post-heading .meta a {
     text-decoration: none;
 }
 
+.main-product-title {
+    color: #bda34c;
+    text-transform: uppercase;
+    font-family: 'Abel', 'Open Sans', serif;
+    padding-top: 20px;
+    letter-spacing: 1px;
+}
+
+.main-product-price {
+    color: #131313;
+    text-transform: uppercase;
+    font-family: 'Abel', 'Open Sans', serif;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.product-vendor {
+    text-transform: uppercase;
+    font-family: 'Abel', 'Open Sans', serif;
+
+}
+
+.rte {
+    font-family: 'Abel', 'Open Sans', serif;
+    letter-spacing: .5px;
+}
+
 .product-title {
     color: #131313;
     text-align: center;
@@ -288,7 +315,28 @@ header.masthead .post-heading .meta a {
 }
 
 .product-info {
-    padding-top: 20px;
+    padding-top: 0;
+}
+
+.shopping-cart {
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+.add-to-cart {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.shopping-cart-label {
+    border-bottom: 1px solid #bda34c;
+}
+
+.shopping-cart-label th {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-transform: uppercase;
+    font-family: 'Abel', 'Open Sans', serif;
 }
 
 footer {

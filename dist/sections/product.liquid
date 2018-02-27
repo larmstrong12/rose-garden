@@ -28,15 +28,15 @@
                 {% endif %}
             </div>
 
-            <div class="col-lg-6 text-left product-info">
-                <h1>{{ product.title }}</h1>
-                <p>{{ product.vendor }}</p>
+            <div class="col-lg-6 text-left">
+                <h1 class="main-product-title">{{ product.title }}</h1>
+                <p class="product-vendor">{{ product.vendor }}</p>
                 <div class="rte">
                     {{ product.description }}
                 </div>
             </div>
 
-            <div class="col-lg-6 text-right product-info">
+            <div class="col-lg-6 text-right">
                 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 <meta itemprop="priceCurrency" content="{{ shop.currency }}">
                 <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
@@ -44,7 +44,7 @@
 
                 <form action="/cart/add" method="post" enctype="multipart/form-data">
                     <button type="submit" name="add" data-add-to-cart
-                    {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn btn-primary">
+                    {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn btn-primary add-to-cart">
                         <span data-add-to-cart-text>
                         {% if current_variant.available %}
                             {{ 'products.product.add_to_cart' | t }}
@@ -54,58 +54,49 @@
                         </span>
                     </button>
 
-                  {% unless product.has_only_default_variant %}
+                    <div data-price-wrapper class="main-product-price">
+                        <span data-product-price>
+                            {{ current_variant.price | money }}
+                        </span>
+
+                        {% if product.compare_at_price_max > product.price %}
+                        <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+                            <s data-compare-price>
+                            {% if current_variant.compare_at_price > current_variant.price %}
+                            {{ current_variant.compare_at_price | money }}
+                            {% endif %}
+                            </s>
+                        {% endif %}
+                    </div>
+
+                    {% unless product.has_only_default_variant %}
                     {% for option in product.options_with_values %}
-                      <div class="selector-wrapper js">
+                    <div class="selector-wrapper js">
                         <label for="SingleOptionSelector-{{ forloop.index0 }}">
-                          {{ option.name }}
+                            {{ option.name }}
                         </label>
 
-                        <select
-                          id="SingleOptionSelector-{{ forloop.index0 }}"
-                          data-single-option-selector
-                          data-index="option{{ option.position }}">
-                          {% for value in option.values %}
-                            <option
-                              value="{{ value | escape }}"
-                              {% if option.selected_value == value %}selected="selected"{% endif %}>
+                        <select id="SingleOptionSelector-{{ forloop.index0 }}" data-single-option-selector data-index="option{{ option.position }}">
+                            {% for value in option.values %}
+                            <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
                                 {{ value }}
                             </option>
-                          {% endfor %}
+                            {% endfor %}
                         </select>
-                      </div>
+                    </div>
                     {% endfor %}
-                  {% endunless %}
+                    {% endunless %}
 
-                  <select name="id" class="no-js" data-product-select>
-                    {% for variant in product.variants %}
-                      <option
-                        {% if variant == current_variant %}selected="selected"{% endif %}
-                        {% unless variant.available %}disabled="disabled"{% endunless %}
-                        value="{{ variant.id }}">
-                          {{ variant.title }}
-                      </option>
-                    {% endfor %}
-                  </select>
+                    <select name="id" class="no-js" data-product-select>
+                        {% for variant in product.variants %}
+                        <option {% if variant == current_variant %}selected="selected"{% endif %} {% unless variant.available %}disabled="disabled"{% endunless %} value="{{ variant.id }}">
+                            {{ variant.title }}
+                        </option>
+                        {% endfor %}
+                    </select>
 
                   <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
                   <input type="number" id="Quantity" name="quantity" value="1" min="1">
-
-                  <div data-price-wrapper>
-                    <span data-product-price>
-                      {{ current_variant.price | money }}
-                    </span>
-
-                    {% if product.compare_at_price_max > product.price %}
-                      <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-                      <s data-compare-price>
-                        {% if current_variant.compare_at_price > current_variant.price %}
-                          {{ current_variant.compare_at_price | money }}
-                        {% endif %}
-                      </s>
-                    {% endif %}
-                  </div>
-
 
                 </form>
             </div>
