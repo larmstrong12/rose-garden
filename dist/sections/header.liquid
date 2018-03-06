@@ -9,22 +9,26 @@
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item active carousel-item-one">
-            <div class="carousel-caption d-none d-md-block text-left">
-                <h1 class="heading">{{ section.settings.main_heading }}</h1>
-                <h3 class="subheading">{{ section.settings.sub_heading }}</h3>
-                <p class="paragraph">{{ section.settings.heading_paragraph }}</p>
+            <div class="carousel-caption d-none d-md-block">
+                <h1 class="heading">{{ section.settings.main_heading_one }}</h1>
+                <h3 class="subheading">{{ section.settings.sub_heading_one }}</h3>
+                <p class="paragraph">{{ section.settings.heading_paragraph_one }}</p>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item carousel-item-two">
             <div class="carousel-caption d-none d-md-block">
-
+                <h1 class="heading">{{ section.settings.main_heading_two }}</h1>
+                <h3 class="subheading">{{ section.settings.sub_heading_two }}</h3>
+                <p class="paragraph">{{ section.settings.heading_paragraph_two }}</p>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
           <div class="carousel-item carousel-item-three">
             <div class="carousel-caption d-none d-md-block">
-
+                <h1 class="heading">{{ section.settings.main_heading_three }}</h1>
+                <h3 class="subheading">{{ section.settings.sub_heading_three }}</h3>
+                <p class="paragraph">{{ section.settings.heading_paragraph_three }}</p>
             </div>
           </div>
         </div>
@@ -49,35 +53,77 @@
         "id": "logo",
         "label": "Logo image"
       },
+
       {
         "type": "image_picker",
         "id": "background_img_one",
         "label": "Slide One"
       },
       {
+        "type": "text",
+        "id": "main_heading_one",
+        "label": "Main Heading One",
+        "default": "Main Heading One"
+      },
+      {
+        "type": "text",
+        "id": "sub_heading_one",
+        "label": "Sub Heading One",
+        "default": "Sub Heading One"
+      },
+      {
+        "type": "text",
+        "id": "heading_paragraph_one",
+        "label": "Heading Paragraph One",
+        "default": "Heading Paragraph One"
+      },
+
+      {
         "type": "image_picker",
-        "id": "background-img-two",
+        "id": "background_img_two",
         "label": "Slide Two"
       },
       {
+        "type": "text",
+        "id": "main_heading_two",
+        "label": "Main Heading Two",
+        "default": "Main Heading Three"
+      },
+      {
+        "type": "text",
+        "id": "sub_heading_two",
+        "label": "Sub Heading Two",
+        "default": "Sub Heading Two"
+      },
+      {
+        "type": "text",
+        "id": "heading_paragraph_two",
+        "label": "Heading Paragraph Two",
+        "default": "Heading Paragraph Two"
+      },
+
+      {
         "type": "image_picker",
-        "id": "background-img-three",
+        "id": "background_img_three",
         "label": "Slide Three"
       },
       {
         "type": "text",
-        "id": "main_heading",
-        "label": "Main Heading"
+        "id": "main_heading_three",
+        "label": "Main Heading Three",
+        "default": "Main Heading Three"
       },
       {
         "type": "text",
-        "id": "sub_heading",
-        "label": "Sub Heading"
+        "id": "sub_heading_three",
+        "label": "Sub Heading Three",
+        "default": "Sub Heading Three"
       },
       {
         "type": "text",
-        "id": "heading_paragraph",
-        "label": "Heading Paragraph"
+        "id": "heading_paragraph_three",
+        "label": "Heading Paragraph Three",
+        "default": "Heading Paragraph Three"
       },
       {
         "type": "range",

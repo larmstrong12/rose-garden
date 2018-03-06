@@ -211,13 +211,23 @@ header.masthead .post-heading .meta a {
 }
 
 .heading, .subheading, .paragraph {
-    color: #000;
     font-family: 'Abel', 'Open Sans', serif;
     text-transform: uppercase;
 }
 
+.heading {
+    font-size: 60px;
+    font-weight: bold;
+    color: #131313;
+    letter-spacing: 2px;
+    background-color: rgba(255, 255, 255, 0.67);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+
 .carousel-item {
-    height: 65vh;
+    height: 55vh;
     min-height: 300px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -226,21 +236,59 @@ header.masthead .post-heading .meta a {
     background-size: cover;
 }
 
-.featured-collection-title {
+.newest-arrival {
+    padding-bottom: 30px;
+}
+
+.newest-arrival-product-page {
     font-family: 'Abel', 'Open Sans', serif;
     font-weight: 300;
     color: #bda34c;
     text-transform: uppercase;
     padding-top: 40px;
     padding-left: 20px;
+    font-size: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.newest-arrival-product-title {
+    font-size: 20px;
+    font-family: 'Abel', 'Open Sans', serif;
+    color: #5a5a5a;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.newest-arrival-product-price {
+    font-family: 'Abel', 'Open Sans', serif;
+    font-weight: 500;
+    color: #131313;
+    text-transform: uppercase;
+    padding-left: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.featured-collection-title {
+    font-family: 'Abel', 'Open Sans', serif;
+    font-weight: 300;
+    color: #bda34c;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 40px;
+    letter-spacing: 1px;
 }
 
 .featured-collection-subtitle {
     font-family: 'Abel', 'Open Sans', serif;
-    font-weight: 200;
+    font-weight: 500;
     color: #131313;
     text-transform: uppercase;
     padding-left: 20px;
+    padding-top: 80px;
+    font-size: 30px;
 }
 
 .product-page {
@@ -255,6 +303,20 @@ header.masthead .post-heading .meta a {
 .product:hover {
     text-decoration: none;
     color: #5a5a5a;
+}
+
+.product-list {
+    list-style: none;
+}
+
+.product-list li {
+    display: inline-block;
+}
+
+.product-list li:hover {
+    opacity: 3;
+    color: #5a5a5a;
+
 }
 
 .main-product-title {
@@ -376,9 +438,34 @@ td {
     padding: 10px;
 }
 
+.title {
+    text-align: center;
+}
+
 .cart-title {
     font-family: 'Abel', 'Open Sans', serif;
     padding: 20px;
+}
+
+.contact {
+    padding: 40px;
+}
+
+.contact-title {
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Abel', 'Open Sans', serif;
+}
+
+.general-info {
+    font-family: 'Abel', 'Open Sans', serif;
+    padding: 30px;
+    text-align: center;
+}
+
+.collab-info {
+    font-family: 'Abel', 'Open Sans', serif;
+    text-align: center;
 }
 
 .main-shopping {
@@ -386,15 +473,42 @@ td {
 }
 
 .carousel-item-one {
-    background-image: url(../assets/shutterstock_689997190.jpg);
+    background-image: url('../assets/light-room.jpg');
 }
 
 .carousel-item-two {
-    background-image: url(../assets/shutterstock_644867923.jpg);
+    background-image: url('../assets/green-chair.jpg');
 }
 
 .carousel-item-three {
-    background-image: url(../assets/shutterstock_744120619.jpg);
+    background-image: url('../assets/green-image.jpg');
+}
+
+.collection-list {
+    border-top: 20px #5a5a5a;
+    border-bottom: 20px #5a5a5a;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.collection-list-title {
+    background-color: rgba(189, 163, 76, 0.32);
+    text-align: center;
+    font-family: 'Abel', 'Open Sans', serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: #131313;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.collection-list-title:hover {
+    color: #131313;
+    background-color: white;
+}
+
+.collection-list-item a:hover {
+    text-decoration: none;
 }
 
 footer {
@@ -442,3 +556,5 @@ footer ul li a:hover {
     text-decoration: none;
     color: #bda34c;
 }
+
+

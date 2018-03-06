@@ -1,18 +1,19 @@
 <section>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12">
                 {% if section.settings.title != blank %}
-                  <h2 class="featured-collection-title">{{ section.settings.title | escape }}</h2>
-                  <p class="featured-collection-subtitle">{{ section.settings.subtitle | escape }}</p>
+                    <p class="featured-collection-subtitle">{{ section.settings.subtitle | escape }}</p>
+                    <hr>
+                    <h2 class="featured-collection-title">{{ section.settings.title | escape }}</h2>
                 {% endif %}
             </div>
 
 
             {%- assign collection = collections[section.settings.collection] -%}
 
-            {% for product in collection.products limit: 3 %}
-            <div class="col-lg-3 col-md-6 col-sm-12">
+            {% for product in collection.products limit: 4 %}
+            <div class="col-lg-2 col-md-6 col-sm-12">
 
                 <a href="{{ product.url | within: collection }}" class="product text-center">
                     {% if product.featured_image != blank %}
