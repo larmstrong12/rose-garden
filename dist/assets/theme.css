@@ -287,7 +287,7 @@ header.masthead .post-heading .meta a {
     color: #131313;
     text-transform: uppercase;
     padding-left: 20px;
-    padding-top: 80px;
+    padding-top: 50px;
     font-size: 30px;
 }
 
@@ -472,6 +472,11 @@ td {
     padding-top: 100px;
 }
 
+.featured-collection {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 .carousel-item-one {
     background-image: url('../assets/light-room.jpg');
 }
@@ -487,8 +492,8 @@ td {
 .collection-list {
     border-top: 20px #5a5a5a;
     border-bottom: 20px #5a5a5a;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .collection-list-title {
@@ -509,6 +514,25 @@ td {
 
 .collection-list-item a:hover {
     text-decoration: none;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('../assets/green-chair.jpg');
+
+    /* Set a specific height */
+    height: 30vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.breakup {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 footer {

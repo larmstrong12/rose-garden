@@ -1,7 +1,7 @@
-<section>
-    <div class="container">
+<section class="featured-collection">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="col-lg-2 col-md-6 col-sm-12">
                 {% if section.settings.title != blank %}
                     <p class="featured-collection-subtitle">{{ section.settings.subtitle | escape }}</p>
                     <hr>
@@ -12,7 +12,7 @@
 
             {%- assign collection = collections[section.settings.collection] -%}
 
-            {% for product in collection.products limit: 4 %}
+            {% for product in collection.products limit: 5 %}
             <div class="col-lg-2 col-md-6 col-sm-12">
 
                 <a href="{{ product.url | within: collection }}" class="product text-center">
