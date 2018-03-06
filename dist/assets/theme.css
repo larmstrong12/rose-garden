@@ -119,6 +119,10 @@ nav ul li a:hover {
     padding-bottom: 2px;
 }
 
+.navbar-toggler {
+    font-family: 'Abel', 'Open Sans', serif;
+}
+
 header.masthead {
     margin-bottom: 50px;
     background: no-repeat center center;
@@ -220,11 +224,20 @@ header.masthead .post-heading .meta a {
     font-weight: bold;
     color: #131313;
     letter-spacing: 2px;
-    background-color: rgba(255, 255, 255, 0.67);
+    background-color: rgba(255, 255, 255, 0.84);
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.subheading {
+    color: #bda34c;
+    background-color: rgba(255, 255, 255, 0.84);
+}
+
+.carousel-caption {
     margin-bottom: 50px;
 }
+
 
 .carousel-item {
     height: 55vh;
@@ -291,6 +304,10 @@ header.masthead .post-heading .meta a {
     font-size: 30px;
 }
 
+.cart {
+    padding-top: 5px;
+}
+
 .product-page {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -298,6 +315,11 @@ header.masthead .post-heading .meta a {
 
 .product {
     color: #bda34c;
+}
+
+.product-quantity {
+    font-family: 'Abel', 'Open Sans', serif;
+    text-transform: uppercase;
 }
 
 .product:hover {
@@ -316,7 +338,6 @@ header.masthead .post-heading .meta a {
 .product-list li:hover {
     opacity: 3;
     color: #5a5a5a;
-
 }
 
 .main-product-title {
