@@ -34,8 +34,11 @@
         "featured-product": {
           "type": "featured-product"
         },
-        "breakup": {
-          "type": "breakup"
+        "breakup-1": {
+          "type": "breakup-1"
+        },
+        "breakup-2": {
+          "type": "breakup-2"
         }
       },
       "content_for_index": [
@@ -43,7 +46,8 @@
         "collection-list",
         "featured-collection",
         "featured-product",
-        "breakup"
+        "breakup-1",
+        "breakup-2"
       ]
     }
   }

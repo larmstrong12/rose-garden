@@ -240,12 +240,12 @@ header.masthead .post-heading .meta a {
 
 
 .carousel-item {
-    height: 55vh;
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    height: 65vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -345,7 +345,7 @@ header.masthead .post-heading .meta a {
     text-transform: uppercase;
     font-family: 'Abel', 'Open Sans', serif;
     padding-top: 20px;
-    letter-spacing: 1px;
+    letter-spacing: 2px
 }
 
 .shopping-info {
@@ -459,7 +459,7 @@ td {
     padding: 10px;
 }
 
-.title {
+.page_title {
     text-align: center;
 }
 
@@ -469,24 +469,33 @@ td {
 }
 
 .contact {
-    padding: 40px;
+    height: 85vh;
+    padding-bottom: 30px;
+    padding-top: 100px;
 }
 
 .contact-title {
-    padding-top: 40px;
-    text-align: center;
+    padding-top: 30px;
     font-family: 'Abel', 'Open Sans', serif;
+}
+
+.contact p a{
+    text-decoration: none;
+    color: #bda34c;
+}
+
+.contact p a:hover{
+    text-decoration: none;
+    color: #5a5a5a;
 }
 
 .general-info {
     font-family: 'Abel', 'Open Sans', serif;
-    padding: 30px;
-    text-align: center;
+    padding-bottom: 10px;
 }
 
 .collab-info {
     font-family: 'Abel', 'Open Sans', serif;
-    text-align: center;
 }
 
 .main-shopping {
@@ -537,9 +546,10 @@ td {
     text-decoration: none;
 }
 
-.parallax {
+.parallax-1 {
     /* The image used */
     background-image: url('../assets/green-chair.jpg');
+
 
     /* Set a specific height */
     height: 30vh;
@@ -551,9 +561,28 @@ td {
     background-size: cover;
 }
 
-.breakup {
+.parallax-2 {
+    /* The image used */
+    background-image: url('../assets/light-room.jpg');
+
+
+    /* Set a specific height */
+    height: 30vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.breakup-1 {
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.breakup-2 {
+    padding-top: 30px;
 }
 
 footer {
@@ -561,6 +590,11 @@ footer {
     border-top: 1px solid #bda34c;
     font-family: 'Abel', 'Open Sans', serif;
     position: relative;
+}
+
+.footer-title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #bda34c;
 }
 
 footer .list-inline {
@@ -574,14 +608,19 @@ footer .copyright {
     text-align: center;
 }
 
-footer ul {
+footer .footer-links ul {
     list-style: none;
-    display: inline-block;
 }
 
-footer ul li {
+footer .social-links ul {
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+footer .social-links ul li {
     display: inline-block;
     padding-left: 10px;
+    padding-bottom: 10px;
     padding-right: 10px;
 }
 

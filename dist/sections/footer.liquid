@@ -1,7 +1,8 @@
 <footer>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-sm-12 text-center links">
+            <div class="col-lg-3 col-sm-12 footer-links">
+                <p class="footer-title">NAVIGATION</p>
                 {%- assign footer_linklist = section.settings.footer_linklist -%}
                 {% if linklists[footer_linklist].links.size > 0 %}
                 <ul>
@@ -9,13 +10,22 @@
                     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                     {% endfor %}
                 </ul>
-              {% endif %}
+                {% endif %}
             </div>
 
-            <div class="col-lg-4 col-sm-12 text-center">
-                <div>
-                    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}.</small>
-                </div>
+            <div class="col-lg-3 col-sm-12">
+                <p class="footer-title">CONTACT + SUPPORT</p>
+                {%- assign footer_linklist_two = section.settings.footer_linklist_twot -%}
+                {% if linklists[footer_linklist_two].links.size > 0 %}
+                <ul>
+                    {% for link in linklists[footer_linklist_two].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div class="col-lg-3 col-sm-12">
                 {% if section.settings.show_payment_icons %}
                 {% unless shop.enabled_payment_types == empty %}
                 {%- assign payment_icons_available = 'amazon_payments,american_express,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' -%}
@@ -36,7 +46,7 @@
                 {% endif %}
             </div>
 
-            <div class="col-lg-4 col-sm-12 text-center">
+            <div class="col-lg-12 col-sm-12 text-center social-links">
             {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
                 <ul class="list-inline">
                     {% for social in social_accounts %}
@@ -55,6 +65,12 @@
                     {% endfor %}
                 </ul>
             </div>
+
+            <div class="col-lg-12 text-center">
+                <div>
+                    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}.</small>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
@@ -67,6 +83,12 @@
         "type": "link_list",
         "id": "footer_linklist",
         "label": "First menu",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_two",
+        "label": "Second menu",
         "default": "footer"
       },
       {

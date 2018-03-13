@@ -13,7 +13,6 @@
           {% endif %}
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          MENU
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -42,7 +41,12 @@
                 {% endfor %}
                 <li class="cart">
                     <a href="/cart">
-                      {% include 'icon-cart' %} ({{ cart.item_count }})
+                        <i class="fa fa-shopping-cart"></i> ({{ cart.item_count }})
+                    </a>
+                </li>
+                <li class="cart">
+                    <a href="/account">
+                        <i class="fa fa-user"></i>
                     </a>
                 </li>
             </ul>
